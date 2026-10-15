@@ -1,0 +1,113 @@
+/* Application Layout Structure */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-app);
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevents flex children from overflowing */
+}
+
+/* Notice Banner */
+.notice-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--accent-green-light);
+  border-bottom: 1px solid var(--accent-green-border);
+  color: var(--accent-green-dark);
+  padding: 10px 32px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.notice-banner.notice-error {
+  background-color: var(--color-expense-bg);
+  border-bottom-color: #fecaca;
+  color: var(--color-expense);
+}
+
+.notice-banner.notice-error .notice-dot {
+  background-color: var(--color-expense);
+}
+
+.notice-banner.notice-error .notice-close {
+  color: var(--color-expense);
+}
+
+.notice-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+  flex-shrink: 0;
+}
+
+.notice-text {
+  flex: 1;
+}
+
+.notice-close {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--accent-green);
+  padding: 0 4px;
+}
+
+/* Dashboard content wrapper */
+.dashboard-content {
+  flex: 1;
+  padding: 32px;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Zero Data Info Banner for empty months */
+.zero-data-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--accent-green);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.zero-data-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.zero-data-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.zero-data-text strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .dashboard-content {
+    padding: 20px 16px;
+  }
+
+  .notice-banner {
+    padding: 10px 16px;
+  }
+}
